@@ -34,7 +34,7 @@
 
   <script>
     // The value below is injected by flutter build, do not touch.
-    var serviceWorkerVersion = "3364841389";
+    var serviceWorkerVersion = "3805175066";
   </script>
   <!-- This script adds the flutter initialization JS code -->
   <script src="millipuce-public/flutter.js" defer></script>
@@ -74,8 +74,7 @@
           serviceWorkerVersion: serviceWorkerVersion,
         },
         onEntrypointLoaded: function(engineInitializer) {
-          engineInitializer.initializeEngine({
-          }).then(function(appRunner) {
+          engineInitializer.initializeEngine().then(function(appRunner) {
             appRunner.runApp();
           });
         }
