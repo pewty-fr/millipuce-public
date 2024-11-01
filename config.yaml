@@ -1,11 +1,20 @@
 galleryImages:
-  - images/IMG_corbeau.png
-  - images/IMG_poisson.png
-  - images/IMG_sourie.png
-  - images/IMG_cheval.png
-  - images/IMG_violon.jpeg
-  - images/IMG_histoire.jpeg
-  - images/IMG_epouvantail.jpeg
+  - images/corbeau.png
+  - images/poisson.png
+  - images/sourie.png
+  - images/naga.gif
+  - images/cheval.png
+  - images/violon.jpeg
+  - images/histoire.jpeg
+  - images/epouvantail.jpeg
+  - images/bibli.jpeg
+  - images/danslherbe.jpeg
+  - images/histoire.jpeg
+  - images/leloup.jpeg
+  - images/passport.png
+  - images/sorciere.png
+  - images/urbaine.png
+  - images/velo.png
 logo: images/logo.gif
 about:
   logo: images/about.png
