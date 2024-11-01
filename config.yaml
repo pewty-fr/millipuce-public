@@ -3,6 +3,9 @@ galleryImages:
   - images/IMG_poisson.png
   - images/IMG_sourie.png
   - images/IMG_cheval.png
+  - images/IMG_violon.jpeg
+  - images/IMG_histoire.jpeg
+  - images/IMG_epouvantail.jpeg
 logo: images/logo.gif
 about: |
   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ut nisi efficitur, mollis ante a, sollicitudin dui. Nullam leo tortor, venenatis nec felis nec, viverra lacinia enim. Cras nibh nisi, tincidunt a iaculis et, mattis quis nulla. Mauris ut metus porttitor, elementum odio sed, dictum metus. Nullam ex augue, pellentesque quis tempor a, vehicula ac est. Nunc dapibus placerat odio. Suspendisse vel finibus massa.
