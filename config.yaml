@@ -31,6 +31,10 @@ projects:
       - images/assiette-plate-chaton.jpg
       - images/BÉBÉ-renard-V1.jpg
       - images/IMG_2913.jpg
+   - text: |
+      Illustrations pour Collection Bébé Mathilde M OISEAUX
+      - images/0482_MM_AH24_41.jpeg
+    galleryImages:    
 logo: images/logo.gif
 about:
   logo: images/about.png
