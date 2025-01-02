@@ -18,21 +18,16 @@ galleryImages:
   - images/violon.jpeg
 projects:
   - text: |
-      Illustrations pour tatatatam, un jeu de société pour enfants.
+      Illustrations pour Collection Astre Mathilde M 2024
     galleryImages:
-      - images/naga.gif
-      - images/poisson.png
-      - images/passport.png
-      - images/epouvantail.jpeg
+      - images/0017_MM_AH24_3-1.jpeg
+      - images/0245_MM_AH24_20.jpeg
+      - images/ILLU-FILLANTE.jpg
   - text: |
-      Illustrations pour gogogogo, un jeu de société pour enfants.
+      Illustrations pour Collection Bébé Mathilde M 
     galleryImages:
-      - images/histoire.jpeg
-      - images/bibli.jpeg
-      - images/leloup.jpeg
-      - images/sorciere.png
-      - images/urbaine.jpeg
-      - images/violon.jpeg
+      - images/IMG_2911.jpeg
+      - images/assiette-plate-chaton.jpg
 logo: images/logo.gif
 about:
   logo: images/about.png
