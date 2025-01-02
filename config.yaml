@@ -16,6 +16,23 @@ galleryImages:
   - images/sorciere.png
   - images/urbaine.jpeg
   - images/violon.jpeg
+projects:
+  - text: |
+      Illustrations pour tatatatam, un jeu de société pour enfants.
+    galleryImages:
+      - images/naga.gif
+      - images/poisson.png
+      - images/passport.png
+      - images/epouvantail.jpeg
+  - text: |
+      Illustrations pour gogogogo, un jeu de société pour enfants.
+    galleryImages:
+      - images/histoire.jpeg
+      - images/bibli.jpeg
+      - images/leloup.jpeg
+      - images/sorciere.png
+      - images/urbaine.jpeg
+      - images/violon.jpeg
 logo: images/logo.gif
 about:
   logo: images/about.png
