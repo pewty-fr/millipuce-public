@@ -37,6 +37,7 @@ projects:
     galleryImages:  
       - images/0482_MM_AH24_41.jpeg
       - images/ALL OVER 4.jpg
+      - images/ALL OVER 2.jpg
 logo: images/logo.gif
 about:
   logo: images/about.png
