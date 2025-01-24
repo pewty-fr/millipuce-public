@@ -79393,7 +79393,7 @@ return new A.kD(A.b([B.dN,A.hC(s,A.awd(s,s,new A.kG(u.l+q.ge0().c.b,1,s),s),B.u,
 A.o5.prototype={
 af(){return new A.OJ()}}
 A.OJ.prototype={
-K(a){var s,r,q,p=this,o=null,n=A.hq(o,A.b4(a,o,t.w).w.a.a>=1100?200:100,o),m=A.arQ(B.Dw,o,24),l=t.De,k=p.d?B.bd:B.l
+K(a){var s,r,q,p=this,o=null,n=A.hq(o,A.b4(a,o,t.w).w.a.a>=1100?100:50,o),m=A.arQ(B.Dw,o,24),l=t.De,k=p.d?B.bd:B.l
 k=A.af_(m,B.Rh,new A.aii(p),new A.aij(),A.ik(o,o,o,new A.b3(B.j,l),o,o,o,o,new A.b3(k,l),o,o,o,o,o,new A.b3(B.j,l),o,o,o,o,o,o,o,o,o))
 m=A.avQ(B.Ds,24)
 s=p.e?B.bd:B.l
