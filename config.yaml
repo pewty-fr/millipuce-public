@@ -1,4 +1,6 @@
 galleryImages:
+  - images/oursjardin.jpeg
+  - images/concour.jpeg
   - images/sourie.png
   - images/naga.gif
   - images/poisson.png
@@ -33,7 +35,7 @@ projects:
       - images/sourie.jpeg
       - images/oiseau.jpeg
       - images/oiseauxcarte.jpeg
-      - image/oiseauxcroquis.jpeg
+      - images/oiseauxcroquis.jpeg
       - images/oiseauxcouleurs.jpeg
   - text: |
       Illustrations pour Collection Bébé Mathilde M 
