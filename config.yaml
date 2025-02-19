@@ -32,8 +32,8 @@ projects:
       - images/cerise.jpeg
       - images/sourie.jpeg
       - images/oiseau.jpeg
-      -images/oiseauxcarte.jpeg
-      -image/oiseauxcroquis.jpeg
+      - images/oiseauxcarte.jpeg
+      - image/oiseauxcroquis.jpeg
   - text: |
       Illustrations pour Collection Bébé Mathilde M 
     galleryImages:
