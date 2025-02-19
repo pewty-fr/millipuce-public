@@ -12,7 +12,7 @@ jobs:
     - name: List files
       run: |
         find images/ -type d | while read dir; do
-          ls -1 "$dir" >> $dir/.files
+          ls -1 "$dir" > $dir/.files
         done
     - name: Commit changes
       run: |
