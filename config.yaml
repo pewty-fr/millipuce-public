@@ -30,12 +30,12 @@ projects:
   - text: |
       Cartes de Saint valentin
     galleryImages:
-      - images/cartes.jpeg
+      - images/cartestoutes.jpeg
       - images/cerise.jpeg
       - images/sourie.jpeg
       - images/carte.jpeg
       - images/oiseaux.jpeg
-      - images/oiseauxcarte.jpeg
+      - images/oiseauxcartes.jpeg
       - images/oiseauxcroquis.jpeg
       - images/oiseauxcouleurs.jpeg
   - text: |
