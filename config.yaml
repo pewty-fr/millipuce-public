@@ -33,10 +33,11 @@ galleryImages:
   - images/sorciere.png
   - images/urbaine.jpeg
   - images/violon.jpeg
-images: images/work
+imageDir: images/work
 projects:
   - text: |
       Illustrations pour Collection Astre Mathilde M 2024
+    imageDir: images/mathilde_astre
     galleryImages:
       - images/0017_MM_AH24_3-1.jpeg
       - images/0245_MM_AH24_20.jpeg
@@ -45,6 +46,7 @@ projects:
       - images/ALL-OVER-SOLEIL_V2.jpg  
   - text: |
       Cartes de Saint valentin
+    imageDir: images/st-valentin
     galleryImages:
       - images/cartestoutes.jpeg
       - images/cerise.jpeg
@@ -55,6 +57,7 @@ projects:
       - images/oiseauxcroquis.jpeg
   - text: |
       Illustrations pour Collection Bébé Mathilde M 
+    imageDir: images/mathilde-bebe
     galleryImages:
       - images/IMG_2911.jpeg
       - images/assiette-plate-chaton.jpg
@@ -62,6 +65,7 @@ projects:
       - images/IMG_2913.jpg
   - text: |
       Illustrations pour Collection Bébé Mathilde M OISEAUX
+    imageDir: images/mathilde-bebe-oiseaux
     galleryImages:  
       - images/0482_MM_AH24_41.jpeg
       - images/ALL OVER 4.jpg
