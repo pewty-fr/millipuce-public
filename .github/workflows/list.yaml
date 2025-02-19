@@ -1,0 +1,23 @@
+name: List and Commit Files
+on:
+  push:
+    branches:
+      - main
+jobs:
+  list-and-commit:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+    - name: List files
+      run: |
+        find images/ -type d | while read dir; do
+          ls -1 "$dir" >> .files
+        done
+    - name: Commit changes
+      run: |
+        git config --local user.name "GitHub Action"
+        git config --local user.email "action@github.com"
+        git add .
+        git commit -m "Update file list"
+        git push
