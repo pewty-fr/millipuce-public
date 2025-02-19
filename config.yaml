@@ -24,7 +24,11 @@ projects:
       - images/0245_MM_AH24_20.jpeg
       - images/ILLU-FILLANTE.jpg
       - images/ILLU-ÉTOILE.jpg
-      - images/ALL-OVER-SOLEIL_V2.jpg
+      - images/ALL-OVER-SOLEIL_V2.jpg  
+  - text: |
+      Cartes de Saint valentin
+    galleryImages:
+      - images/cerise.jpeg
   - text: |
       Illustrations pour Collection Bébé Mathilde M 
     galleryImages:
