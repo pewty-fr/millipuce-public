@@ -33,6 +33,7 @@ galleryImages:
   - images/sorciere.png
   - images/urbaine.jpeg
   - images/violon.jpeg
+images: images
 projects:
   - text: |
       Illustrations pour Collection Astre Mathilde M 2024
