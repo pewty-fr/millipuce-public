@@ -1,75 +1,17 @@
-galleryImages:
-  - images/reve.jpeg
-  - images/oursjardin.jpeg
-  - images/concour.jpeg
-  - images/sourie.jpeg
-  - images/cerise.jpeg
-  - images/oiseaux.jpeg
-  - imgaes/reve.jpeg
-  - images/galette.jpg
-  - images/souriedenoel.jpg
-  - images/lalettre.jpg
-  - images/boule.jpg
-  - images/froid.jpg
-  - images/montagne.jng
-  - images/sourie.png
-  - images/naga.gif
-  - images/timide.jpg
-  - images/poisson.png
-  - images/passport.png
-  - images/papotte.jpg
-  - images/elephan.jpg
-  - images/soleil.jng
-  - images/epouvantail.jpeg
-  - images/danslherbe.jpeg
-  - images/moto.png
-  - images/cheval.png
-  - images/monstre.jpeg
-  - images/velo.jpeg
-  - images/corbeau.png
-  - images/histoire.jpeg
-  - images/bibli.jpeg
-  - images/leloup.jpeg
-  - images/sorciere.png
-  - images/urbaine.jpeg
-  - images/violon.jpeg
 imageDir: images/work
 projects:
   - text: |
       Illustrations pour Collection Astre Mathilde M 2024
     imageDir: images/mathilde_astre
-    galleryImages:
-      - images/0017_MM_AH24_3-1.jpeg
-      - images/0245_MM_AH24_20.jpeg
-      - images/ILLU-FILLANTE.jpg
-      - images/ILLU-ÉTOILE.jpg
-      - images/ALL-OVER-SOLEIL_V2.jpg  
   - text: |
       Cartes de Saint valentin
     imageDir: images/st-valentin
-    galleryImages:
-      - images/cartestoutes.jpeg
-      - images/cerise.jpeg
-      - images/sourie.jpeg
-      - images/oiseaux.jpeg
-      - images/oiseauxcartes.jpeg
-      - images/oiseauxcouleurs.png
-      - images/oiseauxcroquis.jpeg
   - text: |
       Illustrations pour Collection Bébé Mathilde M 
     imageDir: images/mathilde-bebe
-    galleryImages:
-      - images/IMG_2911.jpeg
-      - images/assiette-plate-chaton.jpg
-      - images/BÉBÉ-renard-V1.jpg
-      - images/IMG_2913.jpg
   - text: |
       Illustrations pour Collection Bébé Mathilde M OISEAUX
     imageDir: images/mathilde-bebe-oiseaux
-    galleryImages:  
-      - images/0482_MM_AH24_41.jpeg
-      - images/ALL OVER 4.jpg
-      - images/ALL OVER 2.jpg
 logo: images/logo.gif
 about:
   logo: images/about.png
