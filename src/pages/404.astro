@@ -1,0 +1,33 @@
+---
+import Base from '../layouts/Base.astro';
+import Sparkle from '../components/Sparkle.astro';
+---
+
+<Base title="Page introuvable">
+  <section class="container lost">
+    <Sparkle size={36} />
+    <h1>Oups, cette page s’est envolée</h1>
+    <p>Elle a peut-être déménagé, ou n’a jamais existé.</p>
+    <a class="btn btn--primary" href="/">Retour aux illustrations</a>
+  </section>
+</Base>
+
+<style>
+  .lost {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    padding-block: clamp(32px, 8vw, 96px);
+    text-align: center;
+  }
+
+  h1 {
+    font-size: clamp(2rem, 1.4rem + 3vw, 3.25rem);
+  }
+
+  p {
+    color: var(--ink-soft);
+    margin-bottom: 12px;
+  }
+</style>

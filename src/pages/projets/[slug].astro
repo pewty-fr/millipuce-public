@@ -1,0 +1,120 @@
+---
+import type { GetStaticPaths } from 'astro';
+import Base from '../../layouts/Base.astro';
+import Gallery from '../../components/Gallery.astro';
+import Icon from '../../components/Icon.astro';
+import { projects, type Project } from '../../lib/content';
+
+export const getStaticPaths = (() =>
+  projects.map((project, i) => ({
+    params: { slug: project.slug },
+    props: { project, next: projects[(i + 1) % projects.length] },
+  }))) satisfies GetStaticPaths;
+
+interface Props {
+  project: Project;
+  next: Project;
+}
+
+const { project, next } = Astro.props;
+const meta = [project.client, project.year].filter(Boolean).join(' · ');
+const alt = [project.title, project.client].filter(Boolean).join(', ');
+---
+
+<Base title={project.title} description={`${project.title}${meta ? ` (${meta})` : ''}, illustrations de Camille Potevin (Millipuce).`}>
+  <article class="container">
+    <header class="page-head">
+      <a class="back link-arrow" href="/projets/"><Icon name="arrow-left" /> Tous les projets</a>
+      <h1>{project.title}</h1>
+      {meta && <p class="meta">{meta}</p>}
+      {project.description && <p class="lede">{project.description}</p>}
+    </header>
+
+    <Gallery items={project.images} alt={alt} maxCols={3} eager={3} />
+
+    {
+      next.slug !== project.slug && (
+        <nav class="next" aria-label="Projet suivant">
+          <a href={`/projets/${next.slug}/`}>
+            <span class="eyebrow">Projet suivant</span>
+            <span class="next-title">
+              {next.title} <Icon name="arrow-right" />
+            </span>
+          </a>
+        </nav>
+      )
+    }
+  </article>
+</Base>
+
+<style>
+  .page-head {
+    max-width: 760px;
+    margin: 0 auto;
+    padding-block: clamp(8px, 3vw, 32px) clamp(24px, 4vw, 44px);
+    text-align: center;
+  }
+
+  .back {
+    font-size: 0.9375rem;
+  }
+
+  .back :global(svg),
+  .next-title :global(svg) {
+    width: 18px;
+    height: 18px;
+  }
+
+  .next-title :global(svg) {
+    display: inline-block;
+    vertical-align: -0.05em;
+    margin-left: 4px;
+  }
+
+  h1 {
+    margin-top: 16px;
+    font-size: clamp(2rem, 1.3rem + 3vw, 3.5rem);
+  }
+
+  .meta {
+    margin-top: 10px;
+    font-weight: 750;
+    color: var(--terracotta-deep);
+  }
+
+  .lede {
+    margin-top: 12px;
+    color: var(--ink-soft);
+    font-size: 1.125rem;
+  }
+
+  .next {
+    display: flex;
+    justify-content: center;
+    margin-top: clamp(40px, 6vw, 72px);
+  }
+
+  .next a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    padding: 20px 32px;
+    border-radius: 999px;
+    text-decoration: none;
+    transition: background-color 0.2s ease;
+  }
+
+  .next a:hover {
+    background: var(--paper-deep);
+  }
+
+  .next-title {
+    text-align: center;
+    text-wrap: balance;
+    font-family: var(--font-display);
+    font-variation-settings: 'SOFT' 100;
+    font-size: clamp(1.375rem, 1.1rem + 1.2vw, 1.875rem);
+    font-weight: 560;
+  }
+</style>

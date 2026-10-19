@@ -1,0 +1,88 @@
+---
+import type { Project } from '../lib/content';
+import { thumb, placeholder } from '../lib/images';
+
+interface Props {
+  project: Project;
+  headingLevel?: 'h2' | 'h3';
+}
+
+const { project, headingLevel: Heading = 'h3' } = Astro.props;
+const [cover, colour] = await Promise.all([thumb(project.cover), placeholder(project.cover)]);
+const meta = [project.client, project.year].filter(Boolean).join(' · ');
+const count = `${project.images.length} image${project.images.length > 1 ? 's' : ''}`;
+---
+
+<a class="card" href={`/projets/${project.slug}/`} style={`--ph:${colour}`}>
+  <div class="cover">
+    <img
+      src={cover.src}
+      srcset={cover.srcset}
+      sizes="(min-width: 1000px) 300px, (min-width: 640px) 45vw, 92vw"
+      width={cover.width}
+      height={cover.height}
+      alt=""
+      loading="lazy"
+      decoding="async"
+    />
+  </div>
+  <div class="body">
+    <Heading>{project.title}</Heading>
+    <p>{meta ? `${meta} — ${count}` : count}</p>
+  </div>
+</a>
+
+<style>
+  .card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    border-radius: calc(var(--radius) + 4px);
+    background: var(--card);
+    box-shadow: var(--shadow);
+    text-decoration: none;
+    overflow: hidden;
+    transition:
+      transform 0.3s cubic-bezier(0.2, 0.7, 0.3, 1.2),
+      box-shadow 0.3s ease;
+  }
+
+  .cover {
+    aspect-ratio: 4 / 5;
+    background: var(--ph);
+    overflow: hidden;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+  }
+
+  .body {
+    padding: 14px 16px 18px;
+  }
+
+  h2,
+  h3 {
+    font-size: clamp(1.125rem, 1rem + 0.5vw, 1.3125rem);
+  }
+
+  p {
+    margin-top: 4px;
+    font-size: 0.875rem;
+    color: var(--ink-soft);
+  }
+
+  @media (hover: hover) {
+    .card:hover {
+      transform: translateY(-4px) rotate(-0.5deg);
+      box-shadow: var(--shadow-lift);
+    }
+
+    .card:hover img {
+      transform: scale(1.04);
+    }
+  }
+</style>

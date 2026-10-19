@@ -1,0 +1,83 @@
+---
+import Base from '../layouts/Base.astro';
+import Gallery from '../components/Gallery.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import Sparkle from '../components/Sparkle.astro';
+import Icon from '../components/Icon.astro';
+import { works, projects } from '../lib/content';
+---
+
+<Base>
+  <script is:inline>
+    // Links to the previous Flutter site used hash routes (millipuce.fr/#/about…).
+    {
+      const routes = { '#/projects': '/projets/', '#/about': '/a-propos/', '#/contact': '/#contact' };
+      const target = routes[location.hash];
+      if (target) location.replace(target);
+    }
+  </script>
+  <section class="intro container">
+    <h1 class="eyebrow">
+      <Sparkle size={14} />
+      Camille Potevin · Illustratrice
+      <Sparkle size={14} />
+    </h1>
+  </section>
+
+  <section class="container" aria-labelledby="illustrations">
+    <h2 id="illustrations" class="visually-hidden">Illustrations</h2>
+    <Gallery items={works} alt="Illustration de Camille Potevin" eager={4} />
+  </section>
+
+  {
+    projects.length > 0 && (
+      <section class="section container" aria-labelledby="projets">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Collaborations & collections</p>
+            <h2 id="projets">Projets</h2>
+          </div>
+          <a class="link-arrow" href="/projets/">
+            Voir tous les projets <Icon name="arrow-right" />
+          </a>
+        </div>
+        <div class="projects">
+          {projects.map((p) => (
+            <ProjectCard project={p} />
+          ))}
+        </div>
+      </section>
+    )
+  }
+</Base>
+
+<style>
+  .intro {
+    padding-block: clamp(8px, 2vw, 16px) clamp(24px, 4vw, 40px);
+  }
+
+  h1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    text-align: center;
+  }
+
+  .link-arrow :global(svg) {
+    width: 18px;
+    height: 18px;
+  }
+
+  .projects {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: clamp(14px, 2.4vw, 28px);
+  }
+
+  @media (min-width: 1000px) {
+    .projects {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+  }
+</style>

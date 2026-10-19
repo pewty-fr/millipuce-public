@@ -3,20 +3,34 @@ projects:
   - text: |
       Illustrations pour Collection Astre Mathilde M 2024
     imageDir: images/mathilde_astre
+    title: Collection Astre
+    client: Mathilde M
+    year: 2024
   - text: |
       Cartes de Saint valentin
     imageDir: images/st-valentin
+    title: Cartes de Saint-Valentin
   - text: |
-      Illustrations pour Collection Bébé Mathilde M 
+      Illustrations pour Collection Bébé Mathilde M
     imageDir: images/mathilde-bebe
+    title: Collection Bébé
+    client: Mathilde M
+    cover: IMG_2911.jpeg
   - text: |
       Illustrations pour Collection Bébé Mathilde M OISEAUX
     imageDir: images/mathilde-bebe-oiseaux
+    title: Collection Bébé Oiseaux
+    client: Mathilde M
 logo: images/logo.gif
 about:
   logo: images/about.png
+  image: images/work/025_concour.jpeg
   text: |
-    Designer packaging et produits de formation, j'ai choisi de faire de ma passion pour l’illustration mon métier. 
-    J'aime créer des univers oniriques peuplés de personnages et d'animaux fantastiques. Mes illustrations, réalisées à la gouache, à l’aquarelle ou à la tablette graphique (voir les 3), sont souvent empreintes d'humour et de couleurs. 
-    Mes sources d'inspiration sont mes fidèles compagnons à quatre pattes, les célébrations festives et les émotions qui nous animent au quotidien. 
-    N’hésitez pas à me contacter si mon travail vous plait, je serais ravie de vous en dire plus 😊. 
+    Designer packaging et produits de formation, j'ai choisi de faire de ma passion pour l’illustration mon métier.
+    J'aime créer des univers oniriques peuplés de personnages et d'animaux fantastiques. Mes illustrations, réalisées à la gouache, à l’aquarelle ou à la tablette graphique (voir les 3), sont souvent empreintes d'humour et de couleurs.
+    Mes sources d'inspiration sont mes fidèles compagnons à quatre pattes, les célébrations festives et les émotions qui nous animent au quotidien.
+    N’hésitez pas à me contacter si mon travail vous plait, je serais ravie de vous en dire plus 😊.
+contact:
+  email: camille.potevin@gmail.com
+  instagram: millipuce
+  etsy: https://www.etsy.com/fr/shop/Millipuce

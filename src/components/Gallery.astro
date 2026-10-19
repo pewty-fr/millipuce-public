@@ -1,0 +1,117 @@
+---
+// Masonry without JavaScript: the grid uses tiny rows whose height is a fixed
+// fraction (1/20) of a column width, so each tile spans a number of rows that
+// only depends on its aspect ratio and can be computed at build time.
+import type { Artwork } from '../lib/content';
+import { thumb, full, placeholder } from '../lib/images';
+
+interface Props {
+  items: Artwork[];
+  alt: string;
+  maxCols?: 3 | 4;
+  eager?: number;
+}
+
+const { items, alt, maxCols = 4, eager = 0 } = Astro.props;
+const ROWS_PER_COL = 20;
+
+const sizes =
+  maxCols === 4
+    ? '(min-width: 1320px) 300px, (min-width: 1000px) 24vw, (min-width: 640px) 32vw, 48vw'
+    : '(min-width: 1320px) 400px, (min-width: 640px) 32vw, 48vw';
+
+const tiles = await Promise.all(
+  items.map(async (art, i) => {
+    const [t, big, colour] = await Promise.all([thumb(art), full(art), placeholder(art)]);
+    const span = Math.round((ROWS_PER_COL * t.height) / t.width) + 1;
+    return { t, big, colour, span, alt: items.length > 1 ? `${alt} (${i + 1}/${items.length})` : alt };
+  }),
+);
+---
+
+<div class="gallery" data-gallery data-cols={maxCols}>
+  <ul>
+    {
+      tiles.map(({ t, big, colour, span, alt }, i) => (
+        <li style={`--span:${span};--ph:${colour}`}>
+          <a href={big.src} data-lightbox data-srcset={big.srcset} data-w={big.width} data-h={big.height}>
+            <img
+              src={t.src}
+              srcset={t.srcset}
+              sizes={sizes}
+              width={t.width}
+              height={t.height}
+              alt={alt}
+              loading={i < eager ? 'eager' : 'lazy'}
+              decoding="async"
+            />
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</div>
+
+<style>
+  .gallery {
+    container-type: inline-size;
+  }
+
+  ul {
+    --cols: 2;
+    --u: calc(100cqw / (21 * var(--cols) - 1));
+    display: grid;
+    grid-template-columns: repeat(var(--cols), minmax(0, 1fr));
+    grid-auto-rows: var(--u);
+    column-gap: var(--u);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  @container (min-width: 600px) {
+    ul {
+      --cols: 3;
+    }
+  }
+
+  @container (min-width: 920px) {
+    [data-cols='4'] ul {
+      --cols: 4;
+    }
+  }
+
+  li {
+    grid-row: span var(--span);
+  }
+
+  a {
+    display: block;
+    height: calc(100% - var(--u));
+    border-radius: var(--radius);
+    overflow: hidden;
+    background: var(--ph);
+    box-shadow: var(--shadow);
+    cursor: zoom-in;
+    transition:
+      transform 0.3s cubic-bezier(0.2, 0.7, 0.3, 1.2),
+      box-shadow 0.3s ease;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  @media (hover: hover) {
+    a:hover {
+      transform: translateY(-4px) rotate(-0.6deg);
+      box-shadow: var(--shadow-lift);
+    }
+
+    li:nth-child(even) a:hover {
+      transform: translateY(-4px) rotate(0.6deg);
+    }
+  }
+</style>

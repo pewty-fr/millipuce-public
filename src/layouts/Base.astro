@@ -1,0 +1,89 @@
+---
+import '@fontsource-variable/fraunces/soft.css';
+import '@fontsource-variable/nunito';
+import '../styles/global.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Lightbox from '../components/Lightbox.astro';
+import { contact } from '../lib/content';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const SITE_NAME = 'Millipuce — Camille Potevin, illustratrice';
+const {
+  title,
+  description = 'Camille Potevin, alias Millipuce : illustratrice et designer packaging. Des univers oniriques peuplés de personnages et d’animaux fantastiques, à la gouache, à l’aquarelle et à la tablette graphique.',
+} = Astro.props;
+const fullTitle = title ? `${title} · Millipuce` : SITE_NAME;
+const canonical = new URL(Astro.url.pathname, Astro.site);
+const ogImage = new URL('/og.jpg', Astro.site);
+
+const person = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: 'Camille Potevin',
+  alternateName: 'Millipuce',
+  jobTitle: 'Illustratrice',
+  url: Astro.site?.toString(),
+  email: contact.email && `mailto:${contact.email}`,
+  sameAs: [contact.instagram?.url, contact.etsy].filter(Boolean),
+};
+---
+
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <meta name="theme-color" content="#fbf5ec" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="sitemap" href="/sitemap.xml" />
+    <link rel="preload" href="/logo.webp" as="image" type="image/webp" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="fr_FR" />
+    <meta property="og:site_name" content="Millipuce" />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <script type="application/ld+json" set:html={JSON.stringify(person)} />
+  </head>
+  <body>
+    <a class="skip visually-hidden" href="#contenu">Aller au contenu</a>
+    <Header />
+    <main id="contenu">
+      <slot />
+    </main>
+    <Footer />
+    <Lightbox />
+  </body>
+</html>
+
+<style>
+  .skip:focus {
+    position: fixed;
+    top: 12px;
+    left: 12px;
+    z-index: 10;
+    width: auto;
+    height: auto;
+    clip-path: none;
+    padding: 10px 16px;
+    border-radius: 999px;
+    background: var(--ink);
+    color: #fff;
+    font-weight: 700;
+  }
+</style>

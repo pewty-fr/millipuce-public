@@ -1,0 +1,134 @@
+---
+import Icon from './Icon.astro';
+import Sparkle from './Sparkle.astro';
+import { contact } from '../lib/content';
+---
+
+<footer class="site-footer" id="contact">
+  <div class="container">
+    <div class="contact">
+      <Sparkle class="s1" size={28} />
+      <Sparkle class="s2" size={16} color="var(--terracotta)" />
+      <p class="eyebrow">Contact</p>
+      <h2>Envie de travailler ensemble&nbsp;?</h2>
+      <p class="lede">
+        Si mon travail vous plaît, n’hésitez pas à m’écrire&nbsp;: je serais ravie de vous en dire plus.
+      </p>
+      <div class="actions">
+        {
+          contact.email && (
+            <a class="btn btn--primary" href={`mailto:${contact.email}`}>
+              <Icon name="mail" />
+              {contact.email}
+            </a>
+          )
+        }
+        {
+          contact.instagram && (
+            <a class="btn" href={contact.instagram.url} rel="noopener" target="_blank">
+              <Icon name="instagram" />
+              {contact.instagram.handle}
+            </a>
+          )
+        }
+        {
+          contact.etsy && (
+            <a class="btn" href={contact.etsy} rel="noopener" target="_blank">
+              <Icon name="shop" />
+              Boutique Etsy
+            </a>
+          )
+        }
+      </div>
+    </div>
+    <p class="legal">
+      <span>© {new Date().getFullYear()} Camille Potevin · Illustrations protégées par le droit d’auteur</span>
+      <span>Site réalisé par <a href="https://www.pewty.fr/" rel="noopener">Pewty</a></span>
+    </p>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    position: relative;
+    margin-top: clamp(56px, 9vw, 112px);
+    background: var(--paper-deep);
+    padding-top: clamp(40px, 7vw, 80px);
+  }
+
+  /* scalloped edge */
+  .site-footer::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -13px;
+    height: 14px;
+    background: radial-gradient(circle at 50% 100%, var(--paper-deep) 12px, transparent 12.5px) 0 0 / 28px 14px repeat-x;
+  }
+
+  .contact {
+    position: relative;
+    max-width: 720px;
+    margin-inline: auto;
+    text-align: center;
+  }
+
+  h2 {
+    margin-top: 10px;
+    font-size: clamp(1.875rem, 1.2rem + 2.6vw, 3rem);
+  }
+
+  .lede {
+    margin: 14px auto 0;
+    max-width: 34rem;
+    color: var(--ink-soft);
+    font-size: 1.125rem;
+  }
+
+  .actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 14px;
+    margin-top: 28px;
+  }
+
+  .actions .btn {
+    max-width: 100%;
+    overflow-wrap: anywhere;
+  }
+
+  :global(.contact .sparkle) {
+    position: absolute;
+  }
+
+  :global(.contact .s1) {
+    top: -8px;
+    left: 6%;
+    transform: rotate(12deg);
+  }
+
+  :global(.contact .s2) {
+    top: 4px;
+    right: 12%;
+  }
+
+  .legal {
+    margin-top: clamp(48px, 8vw, 80px);
+    padding-block: 22px calc(22px + env(safe-area-inset-bottom));
+    border-top: 1px solid var(--line);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 4px 24px;
+    text-align: center;
+    font-size: 0.875rem;
+    color: var(--ink-soft);
+  }
+
+  .legal a {
+    color: var(--ink);
+    text-underline-offset: 3px;
+  }
+</style>
